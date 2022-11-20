@@ -1,6 +1,6 @@
 from glob import glob 
 
-# Wczytaj pozytywne recenzje
+# pozytywne recenzje
 words_count_pos = {}  
 pos_files = glob("data/aclImdb/train/pos/*.txt")
 
@@ -13,7 +13,7 @@ for file in pos_files:
     for word in set(words):
         words_count_pos[word] = words_count_pos.get(word, 0) + 1
 
-# Wczytaj negatywne recenzje
+# negatywne recenzje
 words_count_neg = {}  
 neg_files = glob("data/aclImdb/train/neg/*.txt")
 
@@ -32,7 +32,7 @@ for file in neg_files:
 sentence = input('Podaj komentarz: ')
 words = sentence.lower().replace("<br />", " ").split()
 
-# Model AI
+# Model 
 sentence_sentiment = 0.0
 for word in words:
     pos = words_count_pos.get(word, 0)
